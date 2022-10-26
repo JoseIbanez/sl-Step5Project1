@@ -1,7 +1,7 @@
 # Links
 
-https://www.youtube.com/watch?v=yGYeYJpRWPM&ab_channel=SamMeech-Ward
-https://github.com/Sam-Meech-Ward/s3-direct-upload
+* https://www.youtube.com/watch?v=yGYeYJpRWPM&ab_channel=SamMeech-Ward
+* https://github.com/Sam-Meech-Ward/s3-direct-upload
 
 
 # Prepare
