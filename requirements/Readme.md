@@ -3,7 +3,12 @@ Project 1
 
 ## DESCRIPTION
 
-You are a Cloud engineer in an IT firm. You are assigned  a critical project. In this project, there will be an application that will upload a file on the Cloud. This file will be processed by a server-less computing platform and will send an email with all the details to the user. When the user receives the email, he/she is notified about it. In case the user wishes to delete the email, he/she has to reply to the email saying Delete. On receiving this response, the file will be deleted and moved to another folder on the Cloud.
+You are a Cloud engineer in an IT firm. You are assigned  a critical project.
+In this project, there will be an application that will upload a file on the Cloud. 
+This file will be processed by a server-less computing platform and will send an email with all the details to the user.
+When the user receives the email, he/she is notified about it. 
+In case the user wishes to delete the email, he/she has to reply to the email saying Delete. 
+On receiving this response, the file will be deleted and moved to another folder on the Cloud.
 
  
 
