@@ -14,3 +14,4 @@ envsubst < bucket_notification.json > out/bucket_notification.json
 aws s3api put-bucket-notification-configuration \
     --bucket $BUCKETNAME \
     --notification-configuration file://out/bucket_notification.json
+
