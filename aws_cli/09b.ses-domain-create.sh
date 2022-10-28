@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # ref:  https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-bring-your-own.html
 

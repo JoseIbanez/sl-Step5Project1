@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 
 envsubst < ses_destination.json > out/ses_destination.json

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 openssl genrsa -f4 -out out/private.key 1024
 openssl rsa -in out/private.key -outform PEM -pubout -out out/public.key

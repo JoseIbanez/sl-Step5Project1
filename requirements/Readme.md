@@ -24,3 +24,20 @@ On receiving this response, the file will be deleted and moved to another folder
 1. Create a hosted zone along with two record sets of type MX and TXT using Route 53
 1. Create a receipt rule using Route 53
 1. Check whether the file selected to be removed from the email moves to the empty bucket
+
+
+## My Implementation
+1. S3 for incoming files 
+2. S3 for deleted files, trash
+3. Lambda to process new files... and to send a SES notification
+4. Lambda to delete files, move for one Incoming_S3 to other Trash_S3
+5. SQS for Incoming files
+6. SQS for Deleted files
+7. Incoming_S3 event to (incoming) SQS to (incoming) lambda
+8. SES email Identitiy to send to (fix)user Incoming Notifications
+9. SES domain Identitiy to receive user answers (delete Notifications)
+10. SES recevice rule to (delete) SQS to (delete) lambada 
+11. Route 53 hosted zone
+11a. Route 53 MX record to SES service
+11b. Route 53 TXT record to validate SES domain Identitiy
+1. Local web site (nodejs) to upload files to Incoming_S3 directly
