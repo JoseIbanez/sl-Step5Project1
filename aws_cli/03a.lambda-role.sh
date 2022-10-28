@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+export ROLE_PREFIX="lambda2"
 
 
 # GET AWS_ACCOUNT
@@ -11,7 +12,7 @@ export AWS_ACCOUNT=`cat out/aws_account.txt`
 
 # Create an IAM role - for Lambda
 aws iam create-role \
-    --role-name "lambda_${LAMBDA_INC}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_INC}" \
     --assume-role-policy-document file://lambda_role_TrushRelationship.json \
     > out/lambda_role_inc.json
 
@@ -20,7 +21,7 @@ aws iam create-role \
 envsubst < lambda_policy_inc.json > out/lambda_policy_inc.json
 
 aws iam put-role-policy \
-    --role-name "lambda_${LAMBDA_INC}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_INC}" \
     --policy-name $LAMBDA_INC \
     --policy-document file://out/lambda_policy_inc.json \
     > out/policy_inc.json
@@ -28,7 +29,7 @@ aws iam put-role-policy \
 
 # Attach a Managed Policy
 aws iam attach-role-policy \
-    --role-name "lambda_${LAMBDA_INC}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_INC}" \
     --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole 
 
 
@@ -36,7 +37,7 @@ aws iam attach-role-policy \
 
 # Create an IAM role - for Lambda
 aws iam create-role \
-    --role-name "lambda_${LAMBDA_DEL}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_DEL}" \
     --assume-role-policy-document file://lambda_role_TrushRelationship.json \
     > out/lambda_role_del.json
 
@@ -45,7 +46,7 @@ aws iam create-role \
 envsubst < lambda_policy_del.json > out/lambda_policy_del.json
 
 aws iam put-role-policy \
-    --role-name "lambda_${LAMBDA_DEL}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_DEL}" \
     --policy-name $LAMBDA_DEL \
     --policy-document file://out/lambda_policy_del.json \
     > out/policy_del.json
@@ -53,5 +54,5 @@ aws iam put-role-policy \
 
 # Attach a Managed Policy
 aws iam attach-role-policy \
-    --role-name "lambda_${LAMBDA_DEL}" \
+    --role-name "${ROLE_PREFIX}_${LAMBDA_DEL}" \
     --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole 

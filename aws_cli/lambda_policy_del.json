@@ -3,8 +3,17 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": "dynamodb:PutItem",
-            "Resource": "arn:aws:dynamodb:us-east-1:${AWS_ACCOUNT}:table/${DYNAMODB_TABLE}"
+            "Action": [
+                "sqs:GetQueueAttributes",
+                "sqs:SendMessage",
+                "sqs:DeleteMessage",
+                "sqs:ChangeMessageVisibility",
+                "sqs:ReceiveMessage",
+                "sqs:TagQueue",
+                "sqs:UntagQueue",
+                "sqs:PurgeQueue"
+            ],
+            "Resource": "arn:aws:sqs:us-east-1:${AWS_ACCOUNT}:*"
         }
     ]
 }

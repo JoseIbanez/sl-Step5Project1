@@ -6,7 +6,7 @@ aws sqs create-queue --queue-name  $SQS_INC > out/sqs_inc.json
 aws sqs create-queue --queue-name  $SQS_DEL > out/sqs_del.json
 
 export SQL_URL_INC=`cat out/sqs_inc.json | jq -r .QueueUrl`
-export SQL_URL_DEL=`cat out/sqs_inc.json | jq -r .QueueUrl`
+export SQL_URL_DEL=`cat out/sqs_del.json | jq -r .QueueUrl`
 
 # Set policy for Incoming Queue
 envsubst < sqs_policy_inc.json > out/sqs_policy_inc.json
