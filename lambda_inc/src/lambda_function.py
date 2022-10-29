@@ -10,9 +10,10 @@ CHARSET = "UTF-8"
 
 
 def lambda_handler(event, context):
-    print(event)
+    print(json.dumps(event))
     
-    send_mail(event.get('Body'))
+    body=json.loads(event['Records'][0]['body'])
+    send_mail(body)
 
 
 
@@ -27,6 +28,7 @@ def send_mail(body):
     except:
         print("Bad body")
         print(body)
+        return
 
 
     SUBJECT = "New file uploaded"

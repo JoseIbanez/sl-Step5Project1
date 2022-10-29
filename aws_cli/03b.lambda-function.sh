@@ -8,7 +8,7 @@ export ROLE_INC_ARN=`cat out/lambda_role_inc.json | jq -r .Role.Arn`
 aws lambda create-function \
     --function-name ${LAMBDA_INC} \
     --runtime python3.8 \
-    --zip-file fileb://../lambda_function/dist/lambda.zip \
+    --zip-file fileb://../lambda_inc/dist/lambda.zip \
     --handler lambda_function.lambda_handler \
     --role ${ROLE_INC_ARN} \
     > out/lambda_function_inc.json

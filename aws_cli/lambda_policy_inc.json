@@ -14,6 +14,12 @@
                 "sqs:PurgeQueue"
             ],
             "Resource": "arn:aws:sqs:us-east-1:${AWS_ACCOUNT}:*"
-        }
-    ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail"
+            ],
+            "Resource": "arn:aws:ses:*:*:*"
+        }    ]
 }
