@@ -40,4 +40,4 @@ On receiving this response, the file will be deleted and moved to another folder
 11. Route 53 hosted zone
 11a. Route 53 MX record to SES service
 11b. Route 53 TXT record to validate SES domain Identitiy
-1. Local web site (nodejs) to upload files to Incoming_S3 directly
+12. Local web site (nodejs) to upload files to Incoming_S3 directly

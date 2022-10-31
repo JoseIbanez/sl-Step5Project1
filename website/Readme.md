@@ -15,11 +15,11 @@ npm install
 
 ```bash
 
-export BUCKETNAME=""
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
+export BUCKETNAME="sl-ibanez-s5p1-incoming"
+export AWS_ACCESS_KEY_ID="xx"
+export AWS_SECRET_ACCESS_KEY="xx"
 
-npm back/serve.js
+node back/serve.js
 ````
 
 
