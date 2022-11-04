@@ -30,13 +30,13 @@ On receiving this response, the file will be deleted and moved to another folder
 1. S3 for incoming files 
 2. S3 for deleted files, trash
 3. Lambda to process new files... and to send a SES notification
-4. Lambda to delete files, move for one Incoming_S3 to other Trash_S3
+4. Lambda to delete files, move for the Incoming_S3 to the Deleted_S3
 5. SQS for Incoming files
-6. SQS for Deleted files
+6. SNS for Deleted files
 7. Incoming_S3 event to (incoming) SQS to (incoming) lambda
 8. SES email Identitiy to send to (fix)user Incoming Notifications
 9. SES domain Identitiy to receive user answers (delete Notifications)
-10. SES recevice rule to (delete) SQS to (delete) lambada 
+10. SES recevice rule to (delete) SNS to (delete) lambada 
 11. Route 53 hosted zone
 11a. Route 53 MX record to SES service
 11b. Route 53 TXT record to validate SES domain Identitiy

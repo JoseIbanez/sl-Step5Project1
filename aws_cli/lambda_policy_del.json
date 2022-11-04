@@ -2,18 +2,18 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "GiveSESPermissionToInvokeFunction",
             "Effect": "Allow",
-            "Action": [
-                "sqs:GetQueueAttributes",
-                "sqs:SendMessage",
-                "sqs:DeleteMessage",
-                "sqs:ChangeMessageVisibility",
-                "sqs:ReceiveMessage",
-                "sqs:TagQueue",
-                "sqs:UntagQueue",
-                "sqs:PurgeQueue"
-            ],
-            "Resource": "arn:aws:sqs:us-east-1:${AWS_ACCOUNT}:*"
+            "Principal": {
+              "Service": "ses.amazonaws.com"
+            },
+            "Action": "lambda:InvokeFunction",
+            "Resource": "arn:aws:lambda:us-east-1:${AWS_ACCOUNT}:function:FileDelete",
+            "Condition": {
+              "StringEquals": {
+                "AWS:SourceAccount": "${AWS_ACCOUNT}"
+              }
+            }
         }
     ]
 }

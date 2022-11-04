@@ -11,13 +11,13 @@ build:
 
 get:
 	aws lambda get-function \
-		--function-name ${LAMBDA_NAME}
+		--function-name ${LAMBDA_INC}
 
 
 publish:
 	rm -f ./dist/lambda.zip
 	cd src; zip -r ../dist/lambda.zip .
 	aws lambda update-function-code \
-		--function-name ${LAMBDA_NAME} \
+		--function-name ${LAMBDA_INC} \
 		--zip-file fileb://dist/lambda.zip 
 

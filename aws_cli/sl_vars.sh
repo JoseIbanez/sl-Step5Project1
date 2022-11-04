@@ -10,10 +10,10 @@ export LAMBDA_INC="FileProcessor"
 export LAMBDA_DEL="FileDelete"
 
 export SQS_INC="IncomingFile"
-export SQS_DEL="DeleteFile"
+export SNS_DEL="DeleteFile"
 
 export SENDER_MAIL="jose.ibanez@vodafone.com"
 export SENDER_MAIL_2="vlan200@live.com"
 
 export MAIL_DOMAIN="com.com.es"
-
+export BOT_MAIL="bot@com.com.es"

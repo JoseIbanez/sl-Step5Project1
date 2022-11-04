@@ -1,9 +1,0 @@
-{
-    "Service": "Amazon S3",
-    "Event": "s3:TestEvent",
-    "Time": "2022-10-28T08:21:38.651Z",
-    "Bucket": "sl-ibanez-s5p1-incoming",
-    "RequestId": "CJT3T4P3V3FPCEQZ",
-    "HostId": "ujV56NcCqh7UAsrIIahSQ4jCnX4sJxX0mxx9/dk772p8DKsr4YfmWBk3iFZaoEEKDqwQxHmkPo8="
-}
-{"Service":"Amazon S3","Event":"s3:TestEvent","Time":"2022-10-28T08:59:15.524Z","Bucket":"sl-ibanez-s5p1-incoming","RequestId":"P47N2TZVP3VQ6K97","HostId":"0Z/hdgiWQ1ElWzqhtlynTvpi/K2xbefRUpSs3felqstMuDalnTNH2YpMQJEgtIEtHknf4gM22ls="}

@@ -2,7 +2,7 @@
 
 aws route53 create-hosted-zone \
     --name ${MAIL_DOMAIN} \
-    --caller-reference 2022-11-0001 \
+    --caller-reference 2022-11-0002 \
     --hosted-zone-config Comment="incoming mail" \
     > out/zone.json
 
