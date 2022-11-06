@@ -14,6 +14,29 @@
                 "AWS:SourceAccount": "${AWS_ACCOUNT}"
               }
             }
-        }
-    ]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "s3:GetObject",
+            "s3:DeleteObject"
+          ],
+          "Resource": [
+            "arn:aws:s3:us-east-1:${AWS_ACCOUNT}:${BUCKET_INC}/*",
+            "arn:aws:s3:us-east-1:${AWS_ACCOUNT}:${BUCKET_INC}"
+          ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:DeleteObject"
+        ],
+        "Resource": [
+          "arn:aws:s3:us-east-1:${AWS_ACCOUNT}:${BUCKET_DEL}/*",
+          "arn:aws:s3:us-east-1:${AWS_ACCOUNT}:${BUCKET_DEL}"
+        ]
+    }
+  ]
 }
