@@ -21,5 +21,6 @@
                 "ses:SendEmail"
             ],
             "Resource": "arn:aws:ses:*:*:*"
-        }    ]
+        }    
+    ]
 }

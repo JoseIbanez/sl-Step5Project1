@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-export ROLE_PREFIX="lambda2"
+export ROLE_PREFIX="lambda1"
 
 
 # GET AWS_ACCOUNT

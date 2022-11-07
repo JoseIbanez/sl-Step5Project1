@@ -77,7 +77,7 @@ def scan_mail(content):
         # Detect the filename from original mail
         m = re.search("^filename: (.+)$",line)
         if m:
-            filename = m.group(1)
+            filename = m.group(1).rstrip().lstrip()
             print(f"{line}, filename: '{filename}'")
 
         if filename and delete_command:
@@ -94,16 +94,18 @@ def scan_mail(content):
 def move_file(filename):
     s3 = boto3.resource('s3')
 
-    # Copy deleted bucket
-    copy_source = {
-        'Bucket': BUCKET_INC,
-        'Key': filename
-    }
-    s3.meta.client.copy(copy_source, BUCKET_DEL, filename)
+    try:
+        # Copy deleted bucket
+        copy_source = {
+            'Bucket': BUCKET_INC,
+            'Key': filename
+        }
+        s3.meta.client.copy(copy_source, BUCKET_DEL, filename)
 
-    # Delete from original 
-    s3.delete_object(
-        Bucket=BUCKET_INC,
-        Key=filename)
+        # Delete from original 
+        s3.Object(BUCKET_INC, filename).delete()
+        print(f"Moved file {filename} to Bucket:{BUCKET_DEL}")
 
-        
+    except Exception as e:
+        print(e)
+
