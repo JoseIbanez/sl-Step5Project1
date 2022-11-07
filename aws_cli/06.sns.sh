@@ -5,3 +5,5 @@ set -e
 aws sns create-topic \
     --name $SNS_DEL \
     > out/sns_del.json
+
+    
